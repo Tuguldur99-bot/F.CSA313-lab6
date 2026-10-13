@@ -1,0 +1,12 @@
+# Lab06 transfer model WITH constraints derived from part A (ASCII only!)
+From: Valid, Frozen, Missing
+To: Valid, Missing, SameAsFrom
+Amount: Normal, ExactBalance, Zero, Negative, OverBalance, OverLimit, OverOnlyAfterConversion
+Currency: Same, Different
+
+# impossible: "over balance only after conversion" needs a different currency
+IF [Amount] = "OverOnlyAfterConversion" THEN [Currency] = "Different";
+# no from account -> no balance/limit/conversion, so balance-based amounts are meaningless
+IF [From] = "Missing" THEN [Amount] IN {"Normal", "Zero", "Negative"};
+# no from account -> nothing for "to" to be the same as
+IF [From] = "Missing" THEN [To] <> "SameAsFrom";

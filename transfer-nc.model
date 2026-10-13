@@ -1,0 +1,5 @@
+# Lab06 transfer model WITHOUT constraints (ASCII only!)
+From: Valid, Frozen, Missing
+To: Valid, Missing, SameAsFrom
+Amount: Normal, ExactBalance, Zero, Negative, OverBalance, OverLimit, OverOnlyAfterConversion
+Currency: Same, Different

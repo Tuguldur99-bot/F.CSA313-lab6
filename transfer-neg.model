@@ -1,0 +1,8 @@
+# Lab06 transfer model with negative (~) values = [ERROR] values (ASCII only!)
+From: Valid, ~Frozen, ~Missing
+To: Valid, ~Missing, ~SameAsFrom
+Amount: Normal, ExactBalance, ~Zero, ~Negative, ~OverBalance, ~OverLimit, ~OverOnlyAfterConversion
+Currency: Same, Different
+
+# still needed: impossible property combination
+IF [Amount] = "OverOnlyAfterConversion" THEN [Currency] = "Different";
